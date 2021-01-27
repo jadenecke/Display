@@ -360,7 +360,7 @@ segmenting \
     transient 'd'    set_current_paint_label          'Set Paint Lbl: %d' \
     transient 'f'    set_paint_xy_brush_radius        'XY Radius: %g' \
     transient 'g'    set_paint_z_brush_radius         'Out-plane Rad: %g' \
-    transient 'h'    copy_labels_from_higher_slice    'Copy from Rt/Sup/Ant Slice' \
+    transient 'h'    copy_labels_from_higher_slice_confirm    'Copy from Rt/Sup/Ant Slice' \
     transient 'j'    toggle_freestyle_painting         'Freestyle: %s' \
  \
     transient 'z'    reset_segmenting_confirm         'Clear All Labels' \
@@ -368,14 +368,14 @@ segmenting \
     transient 'c'    dilate_labels                    'Dilate 3D' \
     transient 'v'    calculate_volume                 'Calculate Volume' \
     transient 'b'    toggle_display_labels           'Show Labels: %s' \
-    transient 'n'    copy_labels_from_lower_slice  'Copy from Lt/Inf/Post Slice' \
+    transient 'n'    copy_labels_from_lower_slice_confirm  'Copy from Lt/Inf/Post Slice' \
  \
     transient '1'    set_current_erase_label          'Set Erase Lbl: %d' \
     transient '2'    toggle_fast_update               'Fast Update: %s' \
     transient '3'    toggle_cursor_follows_paintbrush 'Cursor Follows: %s' \
     transient '4'    toggle_cursor_visibility         'Cursor Vis: %s' \
     transient '5'    toggle_connectivity              'Connectivity: %d' \
-    transient '6'    label_connected_3d               'Fill 3D' \
+    transient '6'    label_connected_3d_confirm               'Fill 3D' \
  \
     transient '7'    undo_slice_labels                'Undo' \
 } \
@@ -384,6 +384,24 @@ reset_segmenting_confirm \
 { \
     transient 'q'    pop_menu                          'Cancel' \
     transient 'b'    reset_segmenting                 'Yes, Clear Labels' \
+} \
+\
+label_connected_3d_confirm \
+{ \
+    transient 'q'    pop_menu                          'Cancel' \
+    transient 'y'    label_connected_3d                 'Yes, Fill 3D' \
+} \
+\
+copy_labels_from_lower_slice_confirm \
+{ \
+    transient 'q'    pop_menu                          'Cancel' \
+    transient 'y'    copy_labels_from_lower_slice                 'Yes, Copy from Lt/Inf/Post Slice' \
+} \
+\
+copy_labels_from_higher_slice_confirm \
+{ \
+    transient 'q'    pop_menu                          'Cancel' \
+    transient 'y'    copy_labels_from_higher_slice                 'Yes, Copy from Rt/Sup/Ant Slice' \
 } \
  \
 clear_slice_confirm \
